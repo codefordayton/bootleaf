@@ -1,0 +1,965 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.185155,
+                    39.7568849
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "416 East Fifth Street Dayton, Ohio 45402",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": "Y",
+                "hours": "Mon-Thurs 10:30 to 8:00\nFriday 10:30 to 9:00\nSaturday 10:00 to 10:00\nSunday 10:00 to 5:00",
+                "international": null,
+                "local": null,
+                "name": "5th Street Wine & Deli",
+                "non_perishables": null,
+                "notes": null,
+                "organic": null,
+                "phone": "(937) 220-9333",
+                "prepared_foods": null,
+                "produce": null,
+                "rta_bus_routes": "1,2, 3, 4, 12",
+                "seafood": null,
+                "type": "Specialty",
+                "website": "www.5thstreetwineanddeli.net/",
+                "wic_stamps_snap": null,
+                "wine_beer": "Y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.228743,
+                    39.782775
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "1922 Malvern Ave., Dayton, OH 45402",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": "Weekly Boxes",
+                "international": null,
+                "local": null,
+                "name": "Beach Knox Perkins Urban Mini-Farm & CSA",
+                "non_perishables": null,
+                "notes": "Weekly boxes at Garden Station $16/week -- The market operates on the first Friday of the month. Market boxes are available Saturday morning downtown and we're considering on a Sunday pickup option as well (depends on refrigeration).",
+                "organic": null,
+                "phone": "(937) 276-5459",
+                "prepared_foods": null,
+                "produce": null,
+                "rta_bus_routes": "8,14, 40",
+                "seafood": null,
+                "type": "CSA",
+                "website": null,
+                "wic_stamps_snap": "N",
+                "wine_beer": null
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.19268,
+                    39.76035
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "Courthouse Square 25 N Main St Dayton, OH 45402",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": "Mon 3-6pm, Summer",
+                "international": null,
+                "local": "Y",
+                "name": "Courthouse Square Farmers Market",
+                "non_perishables": null,
+                "notes": "Every Monday throughout the summer on Courthouse Square, check out a Farmer's Market from 3 to 6 p.m.",
+                "organic": null,
+                "phone": null,
+                "prepared_foods": null,
+                "produce": "Y",
+                "rta_bus_routes": "1,2, 3, 4, 5, 7, 8, 9, 11, 12, 14, 16, 17, 18, 19, 22, X1A, X1B, X5, 40, 41, 42",
+                "seafood": null,
+                "type": "Farmers Market",
+                "website": null,
+                "wic_stamps_snap": null,
+                "wine_beer": null
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.13050369999999,
+                    39.7229823
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "2274 Patterson Road, Dayton, OH 45420",
+                "bakery": "N",
+                "convenience_foods": "Y",
+                "deli": "Y",
+                "hours": "Mon-Sat: 7am-10pm; Sun: 8am-10pm",
+                "international": "N",
+                "local": "Y",
+                "name": "Dot's Market",
+                "non_perishables": "Y",
+                "notes": "Oriental and Mexican food. Stock local corn, cantalopes, squash, tomatos, cucumbers",
+                "organic": "Y",
+                "phone": "(937) 253-6169",
+                "prepared_foods": "Y",
+                "produce": "Y",
+                "rta_bus_routes": "7",
+                "seafood": "Y",
+                "type": "Grocery",
+                "website": "www.dotsmarket.com",
+                "wic_stamps_snap": "Y",
+                "wine_beer": "Y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.150193,
+                    39.766588
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "3129 East 3rd Street, Dayton, OH 45403",
+                "bakery": "Y",
+                "convenience_foods": "Y",
+                "deli": "N",
+                "hours": "Mon-Sat 9-8 Sun 10-7",
+                "international": "Y",
+                "local": "Y",
+                "name": "Food 4 Less",
+                "non_perishables": "Y",
+                "notes": "Might be interested in events, have contact information for the manager that would make those decisions if need be",
+                "organic": "N",
+                "phone": "(937) 252-4210",
+                "prepared_foods": "N",
+                "produce": "Y",
+                "rta_bus_routes": "1",
+                "seafood": "Y",
+                "type": "Convenience",
+                "website": "www.food4less.com",
+                "wic_stamps_snap": "Y",
+                "wine_beer": "N"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.224813,
+                    39.74453
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "1829 Germantown St, Dayton, OH 45417",
+                "bakery": "N",
+                "convenience_foods": "Y",
+                "deli": "Y",
+                "hours": "Mon-Sat 9-9 Sun 9-7",
+                "international": "N",
+                "local": "N",
+                "name": "Food City",
+                "non_perishables": "Y",
+                "notes": "Sandwiches are the only prepared food that they offer",
+                "organic": "N",
+                "phone": "(937) 263-4799",
+                "prepared_foods": "Y*",
+                "produce": "Y",
+                "rta_bus_routes": "8, 9",
+                "seafood": "Y",
+                "type": "Convenience",
+                "website": "www.foodcity.com",
+                "wic_stamps_snap": "Y",
+                "wine_beer": "Y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.199017,
+                    39.770368
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "301 Geyer Street, Dayton, OH",
+                "bakery": "N",
+                "convenience_foods": "Y",
+                "deli": "Y",
+                "hours": "9a-5p Mon-Sat, Sun 9a-5p",
+                "international": "N",
+                "local": "N",
+                "name": "Food Time Market",
+                "non_perishables": "Y",
+                "notes": "pretty limited deli and produce",
+                "organic": "N",
+                "phone": "(937) 223-5525",
+                "prepared_foods": "N",
+                "produce": "Y",
+                "rta_bus_routes": "7, 12",
+                "seafood": "N",
+                "type": "Convenience",
+                "website": null,
+                "wic_stamps_snap": "Y",
+                "wine_beer": "N"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.1836841,
+                    39.7588735
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "509 E. 4th St. Dayton, OH 45402",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": "Sundays 11am \u00fb 4pm",
+                "international": null,
+                "local": "Y",
+                "name": "Garden Station Sunday Market",
+                "non_perishables": null,
+                "notes": null,
+                "organic": "Y",
+                "phone": "(937) 610-3845",
+                "prepared_foods": null,
+                "produce": "Y",
+                "rta_bus_routes": "1, 2, 3, 4, 12",
+                "seafood": null,
+                "type": "Farmers Market",
+                "website": "http://www.daytongardenstation.org/",
+                "wic_stamps_snap": "N",
+                "wine_beer": null
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.17093600000001,
+                    39.7873329
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "1451 Troy St, Dayton, OH 45404",
+                "bakery": "N",
+                "convenience_foods": "Y",
+                "deli": "Y",
+                "hours": "Mon-Sun 7a - 11p",
+                "international": "N",
+                "local": "N",
+                "name": "Groceryland",
+                "non_perishables": "Y",
+                "notes": "produce was pretty limited",
+                "organic": "N",
+                "phone": "(937) 224-0444",
+                "prepared_foods": "Y",
+                "produce": "Y",
+                "rta_bus_routes": "18",
+                "seafood": "Y",
+                "type": "Grocery",
+                "website": "grocerylandfoods.com",
+                "wic_stamps_snap": "Y",
+                "wine_beer": "Y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.176633,
+                    39.751392
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "1009 Wayne Avenue Dayton, OH 45410",
+                "bakery": "Y",
+                "convenience_foods": "Y",
+                "deli": "Y",
+                "hours": "M-SAT 10:30 \u2013 8:00 SUN 11 \u2013 6",
+                "international": "Y",
+                "local": "N",
+                "name": "Halal International Grocery",
+                "non_perishables": "Y",
+                "notes": "Takes cash but credit is $15.00 minimum, produce and prepared foods were limited, but there were some available",
+                "organic": "N",
+                "phone": "(937) 222-1702",
+                "prepared_foods": "Y",
+                "produce": "Y",
+                "rta_bus_routes": "3, 4, 12",
+                "seafood": "Y",
+                "type": "Specialty",
+                "website": "halaldayton.com",
+                "wic_stamps_snap": "N",
+                "wine_beer": "Y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.186436,
+                    39.756505
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "225 E Sixth St Dayton, OH  45402",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": "Fri 2 to 8pm, Sat 12 to 6pm",
+                "international": null,
+                "local": null,
+                "name": "Jay's  Kitchen at Jay's Seafood Restaurant",
+                "non_perishables": null,
+                "notes": null,
+                "organic": null,
+                "phone": "937-222-2892",
+                "prepared_foods": "Y",
+                "produce": null,
+                "rta_bus_routes": "12",
+                "seafood": "Y",
+                "type": "Specialty",
+                "website": "www.jays.com/kitchen_door.htm",
+                "wic_stamps_snap": null,
+                "wine_beer": "Y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.2910759,
+                    39.7383713
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "555 N. Lutheran Ch. Rd., Dayotn, OH 45417",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": "Varies. Typically a CSA with delivery locations downtown",
+                "international": null,
+                "local": null,
+                "name": "Keener Farm",
+                "non_perishables": null,
+                "notes": "Naturally grown, grass fed/pastured beff, chicken, lamb, pork, eggs, and maple syrup",
+                "organic": "N",
+                "phone": null,
+                "prepared_foods": null,
+                "produce": null,
+                "rta_bus_routes": "NA",
+                "seafood": null,
+                "type": "CSA",
+                "website": null,
+                "wic_stamps_snap": "N",
+                "wine_beer": null
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.171781,
+                    39.745992
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "1555 Wayne Ave Dayton, OH 45410",
+                "bakery": "Y",
+                "convenience_foods": null,
+                "deli": "Y",
+                "hours": "6AM-Midnight, Everyday",
+                "international": null,
+                "local": null,
+                "name": "Kroger",
+                "non_perishables": null,
+                "notes": "Deli/ bakery, wine/beer",
+                "organic": "Y",
+                "phone": "(937) 254-2501",
+                "prepared_foods": "Y",
+                "produce": "Y",
+                "rta_bus_routes": "3, 7, 12",
+                "seafood": null,
+                "type": "Grocery",
+                "website": null,
+                "wic_stamps_snap": "Y",
+                "wine_beer": "Y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.13768999999999,
+                    39.753418
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "1024 S Smithville Rd, Dayton, OH",
+                "bakery": "Y",
+                "convenience_foods": "Y",
+                "deli": "Y",
+                "hours": "Daily 6am-Midnight",
+                "international": "Y",
+                "local": "Y*",
+                "name": "Kroger",
+                "non_perishables": "Y",
+                "notes": "Additionally, they have liquor, pharmacy, gas station, floral department, household iterms, personal items, office supplies, books and Money services including bill pay and Western Union. Local to them is within 300 miles.",
+                "organic": "Y - limited",
+                "phone": "(937) 252-4177",
+                "prepared_foods": "Y",
+                "produce": "Y",
+                "rta_bus_routes": "2",
+                "seafood": "Y",
+                "type": "Grocery",
+                "website": "www.kroger.com",
+                "wic_stamps_snap": "Y",
+                "wine_beer": "Y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.24618699999999,
+                    39.796714
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "3520 West Siebenthaler Avenue Dayton, OH 45406",
+                "bakery": "Y",
+                "convenience_foods": "Y",
+                "deli": "Y",
+                "hours": "Mon-Sun: 6am-12am",
+                "international": "Y",
+                "local": "Y",
+                "name": "Kroger",
+                "non_perishables": "Y",
+                "notes": "Claims all produce is from local growers.",
+                "organic": "Y",
+                "phone": "(937) 567-9578",
+                "prepared_foods": "Y",
+                "produce": "Y",
+                "rta_bus_routes": "2, 12",
+                "seafood": "Y",
+                "type": "Grocery",
+                "website": "www.kroger.com",
+                "wic_stamps_snap": "Y",
+                "wine_beer": "Y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.14761589999999,
+                    39.7871102
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "2528 Valley Street, Riverside OH",
+                "bakery": "Y",
+                "convenience_foods": "Y",
+                "deli": "N",
+                "hours": "M-F 7a-8p, S-S 8a-7p",
+                "international": "Y",
+                "local": "N",
+                "name": "La Panaderia",
+                "non_perishables": "Y",
+                "notes": "more like a hispanic convenience store",
+                "organic": "N",
+                "phone": "(937) 237-7203",
+                "prepared_foods": "Y",
+                "produce": "N",
+                "rta_bus_routes": "19",
+                "seafood": "N",
+                "type": "Specialty",
+                "website": null,
+                "wic_stamps_snap": "Y",
+                "wine_beer": "N"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.14357199999999,
+                    39.748743
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "2721 Linden Ave, Dayton, OH",
+                "bakery": "N",
+                "convenience_foods": "Y",
+                "deli": "N",
+                "hours": "9a-9p, Mon-Sun",
+                "international": "Y",
+                "local": "N",
+                "name": "La Tapatia II",
+                "non_perishables": "Y",
+                "notes": "very limited produce selection",
+                "organic": "N",
+                "phone": "(937) 252-7711",
+                "prepared_foods": "N",
+                "produce": "Y",
+                "rta_bus_routes": "4",
+                "seafood": "N",
+                "type": "Specialty",
+                "website": null,
+                "wic_stamps_snap": "N",
+                "wine_beer": "N"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.17383199999999,
+                    39.7797849
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "748 Troy Street, Dayton, OH",
+                "bakery": "Y",
+                "convenience_foods": "Y",
+                "deli": "Y",
+                "hours": "M-F 8:30a-9p, S-S 8a-9p",
+                "international": "Y",
+                "local": "N",
+                "name": "Lamichoacana Meat Market",
+                "non_perishables": "Y",
+                "notes": "Very nice grocery store.  Small scale grocery store.  It doesn't have as much as a full size grocery store, but it still has a deli, seafood, and meat area like a larger grocery store.",
+                "organic": "N",
+                "phone": "(937)220-9600",
+                "prepared_foods": "Y",
+                "produce": "Y",
+                "rta_bus_routes": "5, 18",
+                "seafood": "Y",
+                "type": "Specialty",
+                "website": "www.michoacanamarket.com",
+                "wic_stamps_snap": "Y",
+                "wine_beer": "Y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.380506,
+                    39.72837000000001
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "10786 Mile Road New Lebanon, OH 45345",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": null,
+                "international": null,
+                "local": null,
+                "name": "Mile Creek Farm",
+                "non_perishables": null,
+                "notes": null,
+                "organic": null,
+                "phone": null,
+                "prepared_foods": null,
+                "produce": null,
+                "rta_bus_routes": "NA",
+                "seafood": null,
+                "type": "CSA",
+                "website": null,
+                "wic_stamps_snap": null,
+                "wine_beer": null
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.166629,
+                    39.753002
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "623 Xenia Ave Dayton, OH 45410",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": null,
+                "international": null,
+                "local": "Y",
+                "name": "Mission of Mary Cooperative",
+                "non_perishables": null,
+                "notes": null,
+                "organic": null,
+                "phone": null,
+                "prepared_foods": null,
+                "produce": "Y",
+                "rta_bus_routes": "4",
+                "seafood": null,
+                "type": "Farmers Market",
+                "website": "https://www.facebook.com/MissionofMaryCooperative",
+                "wic_stamps_snap": null,
+                "wine_beer": null
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.347724,
+                    39.7459444
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "9005 W. Third St., Dayton, OH 45417",
+                "bakery": "N",
+                "convenience_foods": "N",
+                "deli": "N",
+                "hours": "CSA, Farmer's Markets, Farm open to visitors/shoppers",
+                "international": "N",
+                "local": "Y",
+                "name": "Patchwork Gardens",
+                "non_perishables": "N",
+                "notes": "All vegetables. Store not really open to the public, they typically get their business thru farmers markets, restaurants and CSA Programs. Interested in event and teaching about CSA's etc.",
+                "organic": "Y",
+                "phone": "(937) 835-5807",
+                "prepared_foods": "N",
+                "produce": "Y",
+                "rta_bus_routes": "41",
+                "seafood": "N",
+                "type": "CSA",
+                "website": "www.patchworkgardens.net",
+                "wic_stamps_snap": "N",
+                "wine_beer": "N"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.1818667,
+                    39.7626263
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "600 E 2nd St  Dayton, OH 45402",
+                "bakery": "Y",
+                "convenience_foods": null,
+                "deli": null,
+                "hours": "Thursday & Friday 11:00 am - 3:00 pm; Saturday 8:00 am - 3:00 pm",
+                "international": "Y",
+                "local": "Y",
+                "name": "2nd Street Market",
+                "non_perishables": "Y",
+                "notes": "Free Parking, opened year round. Growers/Producers include produce farmers and meat farmers. WIC is done twice a year",
+                "organic": "Y",
+                "phone": "(937) 228-2088",
+                "prepared_foods": "Y",
+                "produce": "Y",
+                "rta_bus_routes": "1, 5, 11, 17, 18, 19, 22, X1A, X1B",
+                "seafood": null,
+                "type": "Farmers Market",
+                "website": "metroparks.org/localfood",
+                "wic_stamps_snap": "Y",
+                "wine_beer": "Y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.18559730000001,
+                    39.7567955
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "8 Brown St., Dayton, OH",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": "Tue - Fri: 11:00 am - 7:00 pm\nSat: 11:00 am - 5:00 pm",
+                "international": null,
+                "local": null,
+                "name": "Spice Paradise",
+                "non_perishables": null,
+                "notes": "May be temporary. Pop-up shop.",
+                "organic": null,
+                "phone": "(937) 409-7221",
+                "prepared_foods": "Y",
+                "produce": null,
+                "rta_bus_routes": "2, 3, 4, 12",
+                "seafood": null,
+                "type": "Specialty",
+                "website": "https://www.facebook.com/SpiceParadiseDayton",
+                "wic_stamps_snap": null,
+                "wine_beer": null
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.1929059,
+                    39.758906
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "36 West 3rd Street Dayton, OH 45402",
+                "bakery": null,
+                "convenience_foods": "y",
+                "deli": "y",
+                "hours": "Mon-Fri: 7am - 7pm",
+                "international": null,
+                "local": null,
+                "name": "Stop-N-Save Foods Inc",
+                "non_perishables": "y",
+                "notes": "Does not accept credit cards.",
+                "organic": null,
+                "phone": "(937) 222-8356",
+                "prepared_foods": "y",
+                "produce": "y",
+                "rta_bus_routes": "1, 2, 3, 4, 5, 7, 8, 9, 11, 12, 14, 16, 17, 18, 19, 22, X1A, X1B, X5, 40, 41, 42",
+                "seafood": null,
+                "type": "Grocery",
+                "website": null,
+                "wic_stamps_snap": "Y",
+                "wine_beer": "y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.146638,
+                    39.735788
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "344 Watervliet Ave, Dayton, OH 45420",
+                "bakery": null,
+                "convenience_foods": "Y",
+                "deli": "Y",
+                "hours": "M-S 6:30am to 2:30am, Sun 7:00am to 2:30am",
+                "international": null,
+                "local": null,
+                "name": "Belmont Market",
+                "non_perishables": "Y",
+                "notes": "Some fresh produce, deli opening soon",
+                "organic": null,
+                "phone": "(937) 256-7780",
+                "prepared_foods": null,
+                "produce": "Y",
+                "rta_bus_routes": "7",
+                "seafood": "Y (frozen)",
+                "type": "Convenience",
+                "website": null,
+                "wic_stamps_snap": "N",
+                "wine_beer": "Y"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.2068863,
+                    39.755874
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "40 S. Edwin C. Moses Blvd Dayton, OH 45402",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": "Sat 9:00am-2:30pm; July 15-September 15",
+                "international": null,
+                "local": "Y",
+                "name": "Westside Farmers Market",
+                "non_perishables": null,
+                "notes": "Seasonal farmers market",
+                "organic": null,
+                "phone": "(937)380-3001",
+                "prepared_foods": null,
+                "produce": "Y",
+                "rta_bus_routes": "1, 2, 4, 41, 42\n\n",
+                "seafood": null,
+                "type": "Farmers Market",
+                "website": "https://www.facebook.com/GreaterDaytonCommunityGarden",
+                "wic_stamps_snap": null,
+                "wine_beer": null
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.1270739,
+                    39.767339
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "4770 Airway Rd, Dayton, OH 45431",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": "Mon-Sat: 9am - 7pm",
+                "international": "Y",
+                "local": null,
+                "name": "International Foods: Asian & Mexican Market",
+                "non_perishables": null,
+                "notes": "Asian and international foods, lots of vietnamese ",
+                "organic": null,
+                "phone": "(937) 256-8112",
+                "prepared_foods": "Y",
+                "produce": "Y",
+                "rta_bus_routes": "1",
+                "seafood": "Y",
+                "type": "Specialty",
+                "website": null,
+                "wic_stamps_snap": "Y",
+                "wine_beer": null
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.12325179999999,
+                    39.7678165
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "116 Woodman Dr, Dayton, OH 45431",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": "Sun: 9:00 AM - 6:30 PM, M-F 9:00AM-8:00PM",
+                "international": "Y",
+                "local": null,
+                "name": "Far East Food",
+                "non_perishables": null,
+                "notes": "Fresh Asian Vegetables, Fresh Seafood & Fish (Lobster, Crabs, Clams)",
+                "organic": null,
+                "phone": "(937) 254-1250",
+                "prepared_foods": null,
+                "produce": "Y",
+                "rta_bus_routes": "1,11",
+                "seafood": "Y",
+                "type": "Specialty",
+                "website": null,
+                "wic_stamps_snap": "Y",
+                "wine_beer": null
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.121524,
+                    39.608509
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "93-7 Rooks Road, Centerville, OH 45458",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": "Saturday 8 am - 3 pm, seasonal stand",
+                "international": null,
+                "local": "Y",
+                "name": "Hungry Toad Farm",
+                "non_perishables": null,
+                "notes": "Certified organic produce, flowers, herbs, plants. Distributes at 2nd Street Market; localharvest.org",
+                "organic": "Y",
+                "phone": null,
+                "prepared_foods": null,
+                "produce": "Y",
+                "rta_bus_routes": "NA",
+                "seafood": null,
+                "type": "CSA",
+                "website": "https://www.facebook.com/pages/Hungry-Toad-Farm/171731583761",
+                "wic_stamps_snap": null,
+                "wine_beer": null
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.5344161,
+                    40.3344802
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "address": "14360 Mangen Road, Yorkshire, Ohio 45388",
+                "bakery": null,
+                "convenience_foods": null,
+                "deli": null,
+                "hours": "Tuesday - Friday | 10AM \u2013 6PM, Saturday | 10AM \u2013 3PM",
+                "international": null,
+                "local": "Y",
+                "name": "E.A.T. Food for Life",
+                "non_perishables": null,
+                "notes": "Take delivery orders for all varieties of food. Has several pick-up locations in Miami Valley.",
+                "organic": "Y",
+                "phone": "(419) 336-5433",
+                "prepared_foods": null,
+                "produce": "Y",
+                "rta_bus_routes": "NA",
+                "seafood": null,
+                "type": "CSA",
+                "website": "http://www.eatfoodforlife.com/",
+                "wic_stamps_snap": null,
+                "wine_beer": null
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}
