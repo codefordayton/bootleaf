@@ -1,4 +1,4 @@
-var map, boroughSearch = [], theaterSearch = [], museumSearch = [];
+var map, boroughSearch = [], theaterSearch = [], museumSearch = [], grocerSearch = [];
 
 // Basemap Layers
 var mapquestOSM = L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {
@@ -268,13 +268,65 @@ $.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
     museums.addData(data);
 });
 
+var grocers = L.geoJson(null, {
+    pointToLayer: function (feature, latlng) {
+        return L.marker(latlng, {
+            icon: L.icon({
+                iconUrl: "assets/img/theater.png",
+                iconSize: [24, 28],
+                iconAnchor: [12, 28],
+                popupAnchor: [0, -25]
+            }),
+            title: feature.properties.NAME,
+            riseOnHover: true
+        });
+    },
+    onEachFeature: function (feature, layer) {
+        if (feature.properties) {
+            var content =   "<table class='table table-striped table-bordered table-condensed'>"+
+                                "<tr><th>Name</th><td>" + feature.properties.name + "</td></tr>"+
+                                "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>"+
+                                "<tr><th>Address</th><td>" + feature.properties.address + "</td></tr>"+
+                                "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>"+
+                            "<table>";
+
+            if (document.body.clientWidth <= 767) {
+                layer.on({
+                    click: function(e) {
+                        $("#feature-title").html(feature.properties.NAME);
+                        $("#feature-info").html(content);
+                        $("#featureModal").modal("show");
+                    }
+                });
+
+            } else {
+                layer.bindPopup(content, {
+                    maxWidth: "auto",
+                    closeButton: false
+                });
+            };
+            theaterSearch.push({
+                name: layer.feature.properties.NAME,
+                source: "Theaters",
+                id: L.stamp(layer),
+                lat: layer.feature.geometry.coordinates[1],
+                lng: layer.feature.geometry.coordinates[0]
+            });
+        }
+    }
+});
+$.getJSON("data/vendor.geojson", function (data) {
+    vendors.addData(data);
+});
+
+
+
 map = L.map("map", {
     zoom: 10,
-    center: [40.702222, -73.979378],
-    layers: [mapquestOSM, boroughs, subwayLines, theaters]
+    center: [39.757588, -84.183497],
+    layers: [mapquestOSM, grocers]
 });
-// Hack to preserver layer order in Layer control
-map.removeLayer(subwayLines);
+
 
 // Larger screens get expanded layer control
 if (document.body.clientWidth <= 767) {
@@ -290,10 +342,7 @@ var baseLayers = {
 };
 
 var overlays = {
-    "Boroughs": boroughs,
-    "Subway Lines": subwayLines,
-    "<img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters": theaters,
-    "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museums
+    "Grocers": grocers
 };
 
 var layerControl = L.control.layers(baseLayers, overlays, {
@@ -312,11 +361,11 @@ $("#searchbox").click(function () {
 
 // Typeahead search functionality
 $(document).one("ajaxStop", function () {
-    map.fitBounds(boroughs.getBounds());
+    map.fitBounds(grocers.getBounds());
     $("#loading").hide();
 
     var boroughsBH = new Bloodhound({
-        name: "Boroughs",
+        name: "Grocers",
         datumTokenizer: function (d) {
             return Bloodhound.tokenizers.whitespace(d.name);
         },
