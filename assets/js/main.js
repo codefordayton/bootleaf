@@ -284,11 +284,19 @@ var grocers = L.geoJson(null, {
     onEachFeature: function (feature, layer) {
         if (feature.properties) {
             var content =   "<table class='table table-striped table-bordered table-condensed'>"+
-                                "<tr><th>Name</th><td>" + feature.properties.name + "</td></tr>"+
-                                "<tr><th>Phone</th><td>" + feature.properties.phone + "</td></tr>"+
-                                "<tr><th>Address</th><td>" + feature.properties.address + "</td></tr>"+
-                                "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.website + "' target='_blank'>" + feature.properties.website + "</a></td></tr>"+
-                            "<table>";
+                                "<tr><th>Name</th><td>" + feature.properties.name + "</td></tr>";
+
+            if (feature.properties.phone){
+                                content += "<tr><th>Phone</th><td>" + feature.properties.phone + "</td></tr>";
+            }
+
+            content += "<tr><th>Address</th><td>" + feature.properties.address + "</td></tr>";
+
+            if (feature.properties.website){
+                content += "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.website + "' target='_blank'>" + feature.properties.website + "</a></td></tr>";
+            }
+
+            content += "<table>";
 
             if (document.body.clientWidth <= 767) {
                 layer.on({
