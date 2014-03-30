@@ -21,151 +21,151 @@ var mapquestHYB = L.layerGroup([L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sa
 })]);
 
 // Overlay Layers
-var boroughs = L.geoJson(null, {
-    style: function (feature) {
-        return {
-            color: "black",
-            fill: false,
-            opacity: 1,
-            clickable: false
-        };
-    },
-    onEachFeature: function (feature, layer) {
-        boroughSearch.push({
-            name: layer.feature.properties.BoroName,
-            source: "Boroughs",
-            id: L.stamp(layer),
-            bounds: layer.getBounds()
-        });
-    }
-});
-$.getJSON("data/boroughs.geojson", function (data) {
-    boroughs.addData(data);
-});
+//var boroughs = L.geoJson(null, {
+//    style: function (feature) {
+//        return {
+//            color: "black",
+//            fill: false,
+//            opacity: 1,
+//            clickable: false
+//        };
+//    },
+//    onEachFeature: function (feature, layer) {
+//        boroughSearch.push({
+//            name: layer.feature.properties.BoroName,
+//            source: "Boroughs",
+//            id: L.stamp(layer),
+//            bounds: layer.getBounds()
+//        });
+//    }
+//});
+//$.getJSON("data/boroughs.geojson", function (data) {
+//    boroughs.addData(data);
+//});
 
-var subwayLines = L.geoJson(null, {
-    style: function (feature) {
-        if (feature.properties.route_id === "1" || feature.properties.route_id === "2" || feature.properties.route_id === "3") {
-            return {
-                color: "#ff3135",
-                weight: 3,
-                opacity: 1
-            };
-        };
-        if (feature.properties.route_id === "4" || feature.properties.route_id === "5" || feature.properties.route_id === "6") {
-            return {
-                color: "#009b2e",
-                weight: 3,
-                opacity: 1
-            };
-        };
-        if (feature.properties.route_id === "7") {
-            return {
-                color: "#ce06cb",
-                weight: 3,
-                opacity: 1
-            };
-        };
-        if (feature.properties.route_id === "A" || feature.properties.route_id === "C" || feature.properties.route_id === "E" || feature.properties.route_id === "SI" || feature.properties.route_id === "H") {
-            return {
-                color: "#fd9a00",
-                weight: 3,
-                opacity: 1
-            };
-        };
-        if (feature.properties.route_id === "Air") {
-            return {
-                color: "#ffff00",
-                weight: 3,
-                opacity: 1
-            };
-        };
-        if (feature.properties.route_id === "B" || feature.properties.route_id === "D" || feature.properties.route_id === "F" || feature.properties.route_id === "M") {
-            return {
-                color: "#ffff00",
-                weight: 3,
-                opacity: 1
-            };
-        };
-        if (feature.properties.route_id === "G") {
-            return {
-                color: "#9ace00",
-                weight: 3,
-                opacity: 1
-            };
-        };
-        if (feature.properties.route_id === "FS" || feature.properties.route_id === "GS") {
-            return {
-                color: "#6e6e6e",
-                weight: 3,
-                opacity: 1
-            };
-        };
-        if (feature.properties.route_id === "J" || feature.properties.route_id === "Z") {
-            return {
-                color: "#976900",
-                weight: 3,
-                opacity: 1
-            };
-        };
-        if (feature.properties.route_id === "L") {
-            return {
-                color: "#969696",
-                weight: 3,
-                opacity: 1
-            };
-        };
-        if (feature.properties.route_id === "N" || feature.properties.route_id === "Q" || feature.properties.route_id === "R") {
-            return {
-                color: "#ffff00",
-                weight: 3,
-                opacity: 1
-            };
-        };
-    },
-    onEachFeature: function (feature, layer) {
-        if (feature.properties) {
-            var content =   "<table class='table table-striped table-bordered table-condensed'>"+
-                                "<tr><th>Division</th><td>" + feature.properties.Division + "</td></tr>"+
-                                "<tr><th>Line</th><td>" + feature.properties.Line + "</td></tr>"+
-                            "<table>";
-            if (document.body.clientWidth <= 767) {
-                layer.on({
-                    click: function(e) {
-                        $("#feature-title").html(feature.properties.Line);
-                        $("#feature-info").html(content);
-                        $("#featureModal").modal("show");
-                    }
-                });
-
-            } else {
-                layer.bindPopup(content, {
-                    maxWidth: "auto",
-                    closeButton: false
-                });
-            };
-        }
-        layer.on({
-            mouseover: function(e) {
-                var layer = e.target;
-                layer.setStyle({
-                    weight: 3,
-                    color: "#00FFFF",
-                    opacity: 1
-                });
-                if (!L.Browser.ie && !L.Browser.opera) {
-                    layer.bringToFront();
-                }
-            },
-            mouseout: function(e) {
-                subwayLines.resetStyle(e.target);
-            }
-        });
-    }
-});
-$.getJSON("data/subways.geojson", function (data) {
-    subwayLines.addData(data);
-});
+//var subwayLines = L.geoJson(null, {
+//    style: function (feature) {
+//        if (feature.properties.route_id === "1" || feature.properties.route_id === "2" || feature.properties.route_id === "3") {
+//            return {
+//                color: "#ff3135",
+//                weight: 3,
+//                opacity: 1
+//            };
+//        };
+//        if (feature.properties.route_id === "4" || feature.properties.route_id === "5" || feature.properties.route_id === "6") {
+//            return {
+//                color: "#009b2e",
+//                weight: 3,
+//                opacity: 1
+//            };
+//        };
+//        if (feature.properties.route_id === "7") {
+//            return {
+//                color: "#ce06cb",
+//                weight: 3,
+//                opacity: 1
+//            };
+//        };
+//        if (feature.properties.route_id === "A" || feature.properties.route_id === "C" || feature.properties.route_id === "E" || feature.properties.route_id === "SI" || feature.properties.route_id === "H") {
+//            return {
+//                color: "#fd9a00",
+//                weight: 3,
+//                opacity: 1
+//            };
+//        };
+//        if (feature.properties.route_id === "Air") {
+//            return {
+//                color: "#ffff00",
+//                weight: 3,
+//                opacity: 1
+//            };
+//        };
+//        if (feature.properties.route_id === "B" || feature.properties.route_id === "D" || feature.properties.route_id === "F" || feature.properties.route_id === "M") {
+//            return {
+//                color: "#ffff00",
+//                weight: 3,
+//                opacity: 1
+//            };
+//        };
+//        if (feature.properties.route_id === "G") {
+//            return {
+//                color: "#9ace00",
+//                weight: 3,
+//                opacity: 1
+//            };
+//        };
+//        if (feature.properties.route_id === "FS" || feature.properties.route_id === "GS") {
+//            return {
+//                color: "#6e6e6e",
+//                weight: 3,
+//                opacity: 1
+//            };
+//        };
+//        if (feature.properties.route_id === "J" || feature.properties.route_id === "Z") {
+//            return {
+//                color: "#976900",
+//                weight: 3,
+//                opacity: 1
+//            };
+//        };
+//        if (feature.properties.route_id === "L") {
+//            return {
+//                color: "#969696",
+//                weight: 3,
+//                opacity: 1
+//            };
+//        };
+//        if (feature.properties.route_id === "N" || feature.properties.route_id === "Q" || feature.properties.route_id === "R") {
+//            return {
+//                color: "#ffff00",
+//                weight: 3,
+//                opacity: 1
+//            };
+//        };
+//    },
+//    onEachFeature: function (feature, layer) {
+//        if (feature.properties) {
+//            var content =   "<table class='table table-striped table-bordered table-condensed'>"+
+//                                "<tr><th>Division</th><td>" + feature.properties.Division + "</td></tr>"+
+//                                "<tr><th>Line</th><td>" + feature.properties.Line + "</td></tr>"+
+//                            "<table>";
+//            if (document.body.clientWidth <= 767) {
+//                layer.on({
+//                    click: function(e) {
+//                        $("#feature-title").html(feature.properties.Line);
+//                        $("#feature-info").html(content);
+//                        $("#featureModal").modal("show");
+//                    }
+//                });
+//
+//            } else {
+//                layer.bindPopup(content, {
+//                    maxWidth: "auto",
+//                    closeButton: false
+//                });
+//            };
+//        }
+//        layer.on({
+//            mouseover: function(e) {
+//                var layer = e.target;
+//                layer.setStyle({
+//                    weight: 3,
+//                    color: "#00FFFF",
+//                    opacity: 1
+//                });
+//                if (!L.Browser.ie && !L.Browser.opera) {
+//                    layer.bringToFront();
+//                }
+//            },
+//            mouseout: function(e) {
+//                subwayLines.resetStyle(e.target);
+//            }
+//        });
+//    }
+//});
+//$.getJSON("data/subways.geojson", function (data) {
+//    subwayLines.addData(data);
+//});
 
 var theaters = L.geoJson(null, {
     pointToLayer: function (feature, latlng) {
@@ -272,12 +272,12 @@ var grocers = L.geoJson(null, {
     pointToLayer: function (feature, latlng) {
         return L.marker(latlng, {
             icon: L.icon({
-                iconUrl: "assets/img/theater.png",
+                iconUrl: "assets/img/grocer.png",
                 iconSize: [24, 28],
                 iconAnchor: [12, 28],
                 popupAnchor: [0, -25]
             }),
-            title: feature.properties.NAME,
+            title: feature.properties.name,
             riseOnHover: true
         });
     },
@@ -285,15 +285,15 @@ var grocers = L.geoJson(null, {
         if (feature.properties) {
             var content =   "<table class='table table-striped table-bordered table-condensed'>"+
                                 "<tr><th>Name</th><td>" + feature.properties.name + "</td></tr>"+
-                                "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>"+
+                                "<tr><th>Phone</th><td>" + feature.properties.phone + "</td></tr>"+
                                 "<tr><th>Address</th><td>" + feature.properties.address + "</td></tr>"+
-                                "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>"+
+                                "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.website + "' target='_blank'>" + feature.properties.website + "</a></td></tr>"+
                             "<table>";
 
             if (document.body.clientWidth <= 767) {
                 layer.on({
                     click: function(e) {
-                        $("#feature-title").html(feature.properties.NAME);
+                        $("#feature-title").html(feature.properties.name);
                         $("#feature-info").html(content);
                         $("#featureModal").modal("show");
                     }
@@ -305,9 +305,9 @@ var grocers = L.geoJson(null, {
                     closeButton: false
                 });
             };
-            theaterSearch.push({
-                name: layer.feature.properties.NAME,
-                source: "Theaters",
+            grocerSearch.push({
+                name: layer.feature.properties.name,
+                source: "Grocers",
                 id: L.stamp(layer),
                 lat: layer.feature.geometry.coordinates[1],
                 lng: layer.feature.geometry.coordinates[0]
@@ -315,8 +315,8 @@ var grocers = L.geoJson(null, {
         }
     }
 });
-$.getJSON("data/vendor.geojson", function (data) {
-    vendors.addData(data);
+$.getJSON("data/vendors.geojson", function (data) {
+    grocers.addData(data);
 });
 
 
