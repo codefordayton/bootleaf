@@ -38,11 +38,11 @@ var grocers = L.geoJson(null, {
             var content =   "<table class='table table-striped table-bordered table-condensed'>"+
                                 "<tr><th>Name</th><td>" + feature.properties.name + "</td></tr>";
 
-            if (feature.properties.phone){
-                                content += "<tr><th>Phone</th><td>" + feature.properties.phone + "</td></tr>";
-            }
-
-            content += "<tr><th>Address</th><td>" + feature.properties.address + "</td></tr>";
+            Object.getOwnPropertyNames(feature.properties).forEach(function(key, idx, array) {
+                if (!(feature.properties[key] == null || key === "website" || key === "name")) {
+                        content += "<tr><th>"+key+"</th><td>" + feature.properties[key] + "</td></tr>";
+                }
+            });
 
             if (feature.properties.website){
                 content += "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.website + "' target='_blank'>" + feature.properties.website + "</a></td></tr>";
