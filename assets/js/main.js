@@ -45,7 +45,11 @@ var grocers = L.geoJson(null, {
             });
 
             if (feature.properties.website){
-                content += "<tr><th>Website</th><td><a class='url-break' href='http://" + feature.properties.website + "' target='_blank'>" + feature.properties.website + "</a></td></tr>";
+                var website = feature.properties.website;
+                if (website.split('://').length == 1) {
+                    website = "http://" + website;
+                }
+                content += "<tr><th>Website</th><td><a class='url-break' href='" + website + "' target='_blank'>" + feature.properties.website + "</a></td></tr>";
             }
 
             content += "<table>";
