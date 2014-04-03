@@ -10,17 +10,17 @@
 		Declare one or more buttons in your html:
 		<button
 			id="btnGrocery"
-			filterProperty="type" // the attribute must match filterPropertyName defined for buttonGroup object
-			filterValue="Grocery" // the attribute must match filterValueName defined for buttonGroup object
-			class="categories btn btn-primary" // include the groupClassName; 'categories' for this example...
+			filterProperty="type" 								// the attribute must match filterPropertyName defined for buttonGroup object
+			filterValue="Grocery" 								// the attribute must match filterValueName defined for buttonGroup object
+			class="categories btn btn-primary" 	 // include the groupClassName; 'categories' for this example...
 			onclick="buttons.toggle(this);" >Grocery</button>
 
 		buttons = new buttonGroup({
-			groupClassName: 'categories', // [Optional] this classname s/b assigned to each button
-			activeClassName: 'btn-primary', // [Optional] the class that visually distinguishes active/inactive button state.
-			grocers: grocers, // the geoJson object which contains the layers
+			groupClassName: 'categories', 				// [Optional] this classname s/b assigned to each button
+			activeClassName: 'btn-primary', 			// [Optional] the class that visually distinguishes active/inactive button state.
+			grocers: grocers, 										// [REQUIRED] the geoJson object which contains the layers
 			filterPropertyName: 'filterProperty', // [Optional] name of tag attribute defined in each button that matches desired property to filter on.
-			fitlerValueName: 'filterValue' // [Optional]  name of tag attribute defined in each button that matches desired property value to filter on.
+			fitlerValueName: 'filterValue' 			 // [Optional]  name of tag attribute defined in each button that matches desired property value to filter on.
 			});
 
 */
@@ -63,7 +63,7 @@ buttonGroup.prototype = {
 				// is made then they will be flagged to display.  This will ensure
 				// an inclusive result so a store can match any of the active categories to be displayed.
 
-				var layers = this.grocers.getLayers();
+				var layers = this.geoJson.getLayers();
 				for (var i = 0; i < layers.length; i++) {
 					showLayer = false;
 					for (var j=0;j < this.buttons.length;j++) {
