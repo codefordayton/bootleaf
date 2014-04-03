@@ -41,7 +41,13 @@ var grocers = L.geoJson(null, {
             Object.getOwnPropertyNames(feature.properties).forEach(function(key, idx, array) {
                 //if (!(feature.properties[key] == null || key === "website" || key === "name")) {
                 if (feature.properties[key] != null && (key == 'address' || key == 'phone')) {
+                      if (key == 'phone') {
+                        phone = +feature.properties[key].replace(/\D/g,'');
+                        content += "<tr><th>"+key+"</th><td><a href='tel:+" + phone + "'>" + feature.properties[key] +"</td></tr>";
+                      }
+                      else {
                        content += "<tr><th>"+key+"</th><td>" + feature.properties[key] + "</td></tr>";
+                       }
                 }
             });
 
