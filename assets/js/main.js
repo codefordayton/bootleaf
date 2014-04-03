@@ -39,8 +39,9 @@ var grocers = L.geoJson(null, {
                                 "<tr><th>Name</th><td>" + feature.properties.name + "</td></tr>";
 
             Object.getOwnPropertyNames(feature.properties).forEach(function(key, idx, array) {
-                if (!(feature.properties[key] == null || key === "website" || key === "name")) {
-                        content += "<tr><th>"+key+"</th><td>" + feature.properties[key] + "</td></tr>";
+                //if (!(feature.properties[key] == null || key === "website" || key === "name")) {
+                if (feature.properties[key] != null && (key == 'address' || key == 'phone')) {
+                       content += "<tr><th>"+key+"</th><td>" + feature.properties[key] + "</td></tr>";
                 }
             });
 
@@ -53,7 +54,7 @@ var grocers = L.geoJson(null, {
             }
 
             content += "<table>";
-
+            console.log(document.body.clientWidth);
             if (document.body.clientWidth <= 767) {
                 layer.on({
                     click: function(e) {
@@ -65,7 +66,7 @@ var grocers = L.geoJson(null, {
 
             } else {
                 layer.bindPopup(content, {
-                    maxWidth: "auto",
+                    maxWidth: "300",
                     closeButton: false
                 });
             };

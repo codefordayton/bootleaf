@@ -1,6 +1,6 @@
 // Button Group. We need a button group because it is possible
 // to be showing more than 1 type at a time, so it's not sufficient
-// to hide markers inside a single button asanother may be set to display them
+// to hide markers inside a single button as another may be set to display them
 // The button objects will have to therefore return an array of marker ids
 // then this group object can collate the lists into a single inclusive list
 
@@ -65,7 +65,7 @@ buttonGroup.prototype = {
 
 				var layers = this.geoJson.getLayers();
 				for (var i = 0; i < layers.length; i++) {
-					showLayer = false;
+					showLayer = false; // by default we wont show marker unless it matches a button category.
 					for (var j=0;j < this.buttons.length;j++) {
 							if (this.buttons[j].hasClass(this.activeClassName)) {
 								// Button is active, see if layer matches, if yes, set it to be displayed...
