@@ -60,7 +60,6 @@ var grocers = L.geoJson(null, {
             }
 
             content += "<table>";
-            console.log(document.body.clientWidth);
             if (document.body.clientWidth <= 767) {
                 layer.on({
                     click: function(e) {
