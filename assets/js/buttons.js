@@ -6,15 +6,6 @@
 
 /*
 	NOTES:
-		1. This object requires that you create your buttons with the following parameters:
-				- a filterProperty, IE a property type from your json, default is filterProperty but can be overrriden
-				- a filterValue, IE the value of the property to match
-				- You must add a group class to each button, the default is categories.
-						This allows this object to identify what buttons it will interact with.
-				- Since this is an object, you must create an instance of it, ie buttons = new ButtonGroup();
-					if you use it directly, the init() function won't run and it won't be initialized properly.
-				- Be sure and pass in grocers object as part of config.  I prefer this to accessing it directly internally
-
 	Example:
 		Declare one or more buttons in your html:
 		<button
@@ -71,14 +62,13 @@ buttonGroup.prototype = {
 				// initially markers will be flagged to be hidden, but if a filter match
 				// is made then they will be flagged to display.  This will ensure
 				// an inclusive result so a store can match any of the active categories to be displayed.
-				// Loop over layers
+
 				var layers = this.grocers.getLayers();
-				//console.log(layers);
 				for (var i = 0; i < layers.length; i++) {
 					showLayer = false;
 					for (var j=0;j < this.buttons.length;j++) {
 							if (this.buttons[j].hasClass(this.activeClassName)) {
-								// Button is active, see if layer matches, if show toggle it to be displayed...
+								// Button is active, see if layer matches, if yes, set it to be displayed...
 								filterProperty = this.buttons[j].attributes.getNamedItem(this.filterPropertyName);
 								filterValue = this.buttons[j].attributes.getNamedItem(this.filterValueName);
 								if (layers[i].feature.properties[filterProperty.value] == filterValue.value) {
@@ -86,10 +76,10 @@ buttonGroup.prototype = {
 								}
 							}
 					}
+					// finished itterating through buttons for this layer, now we either hide or show it...
 					if (showLayer == true) {layers[i]._icon.show(); }
 					else { layers[i]._icon.hide(); }
 				}
 
 		}
-
 };
