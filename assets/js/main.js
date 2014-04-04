@@ -22,6 +22,8 @@ var mapquestHYB = L.layerGroup([L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sa
 
 var grocers = L.geoJson(null, {
     pointToLayer: function (feature, latlng) {
+        // when we have the icons for different types, we can set a variable for icon url here
+        // then use as iconUrl value below...
         return L.marker(latlng, {
             icon: L.icon({
                 iconUrl: "assets/img/grocer.png",
@@ -71,7 +73,7 @@ var grocers = L.geoJson(null, {
 
             } else {
                 layer.bindPopup(content, {
-                    maxWidth: "300",
+                    maxWidth: "350",
                     closeButton: false
                 });
             };
