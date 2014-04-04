@@ -73,7 +73,7 @@ var grocers = L.geoJson(null, {
 
             } else {
                 layer.bindPopup(content, {
-                    maxWidth: "350",
+                    maxWidth: "450",
                     closeButton: false
                 });
             };
