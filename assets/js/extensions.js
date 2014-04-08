@@ -89,3 +89,17 @@ if (typeof HTMLElement.prototype.show !== "function") {
 		this.style.visibility = 'visible';
 	}
 }
+
+/**
+	* visibility() - returns the value of the visibility stayle attribute.
+**/
+if (typeof HTMLElement.prototype.visibility !== "function") {
+		HTMLElement.prototype.visibility = function() {
+			return this.style.visibiliy;
+			}
+}
+
+
+/**
+	*	addressToGoogleMapFormat()
+**/
