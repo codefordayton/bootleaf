@@ -61,7 +61,7 @@ var grocers = L.geoJson(null, {
                 }
                 content += "<tr><th>Website</th><td><a class='url-break' href='" + website + "' target='_blank'>" + feature.properties.website + "</a></td></tr>";
             }
-
+            content += "<tr><th></th><td><a onclick='sidebar.toggle(); return false;'>More Info...</a></td></tr>";
             content += "<table>";
             if (document.body.clientWidth <= 767) {
                 layer.on({

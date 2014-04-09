@@ -98,8 +98,3 @@ if (typeof HTMLElement.prototype.visibility !== "function") {
 			return this.style.visibiliy;
 			}
 }
-
-
-/**
-	*	addressToGoogleMapFormat()
-**/
