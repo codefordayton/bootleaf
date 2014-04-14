@@ -67,6 +67,7 @@ buttonGroup.prototype = {
 				var layers = this.geoJson.getLayers();
 				for (var i = 0; i < layers.length; i++) {
 					layers[i].closePopup();
+					sidebar.hide();
 					showLayer = false; // by default we wont show marker unless it matches a button category.
 					for (var j=0;j < this.buttons.length;j++) {
 							if (this.buttons[j].hasClass(this.activeClassName)) {
