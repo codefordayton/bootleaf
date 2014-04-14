@@ -107,15 +107,9 @@ L.Marker.prototype.getSideBarContents = function() {
 }
 
 
-function testMe(ctr) {
+function updateSidebar(ctr) {
 	layers = grocers.getLayers();
 	layer = layers[ctr];
 	properties = layer.feature.properties;
-	console.log(layer._content);
-	sidebar.setContent(layer._content);
-	console.log(properties);
-
-
-
-
+	sidebar.setContent(layer._sidebarcontent);
 }

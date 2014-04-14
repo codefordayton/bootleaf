@@ -42,9 +42,13 @@ var grocers = L.geoJson(null, {
         if (feature.properties) {
             var content =   "<table class='table table-striped table-bordered table-condensed'>"+
                                 "<tr><th>Name</th><td>" + feature.properties.name + "</td></tr>";
+            var sidebarContent = "<H2>" + feature.properties.name + "</H2>" +
+                                "<table class='table table-striped table-bordered table-condensed'>";
+
 
             Object.getOwnPropertyNames(feature.properties).forEach(function(key, idx, array) {
                 //if (!(feature.properties[key] == null || key === "website" || key === "name")) {
+                sidebarContent += "<tr><th>" + key + "</th><td>" + feature.properties[key] + "</td></tr>";  
                 if (feature.properties[key] != null && (key == 'address' || key == 'phone')) {
                       if (key == 'phone') {
                         phone = +feature.properties[key].replace(/\D/g,'');
@@ -64,15 +68,15 @@ var grocers = L.geoJson(null, {
                 }
                 content += "<tr><th>Website</th><td><a class='url-break' href='" + website + "' target='_blank'>" + feature.properties.website + "</a></td></tr>";
             }
-            content += "<tr><th></th><td><a onclick='testMe(" + ctr + ");sidebar.toggle(); return false;'>More Info...</a></td></tr>";
+            content += "<tr><th></th><td><a onclick='updateSidebar(" + ctr + ");sidebar.toggle(); return false;'>More Info...</a></td></tr>";
             content += "<table>";
             layer._content = content;
+            layer._sidebarcontent = sidebarContent;
             layer._index = ctr;
             ctr += 1;
             if (document.body.clientWidth <= 767) {
                 layer.on({
                     click: function(e) {
-                        console.log(layer);
                         $("#feature-title").html(feature.properties.name);
                         $("#feature-info").html(content);
                         $("#featureModal").modal("show");
@@ -96,16 +100,7 @@ var grocers = L.geoJson(null, {
     }
 });
 $.getJSON("data/vendors.geojson", function (data) {
-    d = grocers.addData(data);
-    console.log(grocers);
-    console.log(sidebar);
-    layers = d.getLayers();
-    console.log(layers[3]);
-    //console.log(layers[3].getSideBarContents());
-    //console.log(data);
-    //console.log(d);
-    //console.log(d.getLayers());
-    //console.log(document);
+    grocers.addData(data);
 });
 
 
