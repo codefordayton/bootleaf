@@ -98,3 +98,24 @@ if (typeof HTMLElement.prototype.visibility !== "function") {
 			return this.style.visibiliy;
 			}
 }
+
+
+L.Marker.prototype.getSideBarContents = function() {
+		console.log(this);
+		console.log(this._leaflet_id);
+		return "<div>Content goes here</div>";
+}
+
+
+function testMe(ctr) {
+	layers = grocers.getLayers();
+	layer = layers[ctr];
+	properties = layer.feature.properties;
+	console.log(layer._content);
+	sidebar.setContent(layer._content);
+	console.log(properties);
+
+
+
+
+}

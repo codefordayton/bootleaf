@@ -20,6 +20,8 @@ var mapquestHYB = L.layerGroup([L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sa
     attribution: 'Labels courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency'
 })]);
 
+var ctr = 0;
+
 var grocers = L.geoJson(null, {
     pointToLayer: function (feature, latlng) {
         // when we have the icons for different types, we can set a variable for icon url here
@@ -36,6 +38,7 @@ var grocers = L.geoJson(null, {
         });
     },
     onEachFeature: function (feature, layer) {
+        // console.log(layer.getSideBarContents());
         if (feature.properties) {
             var content =   "<table class='table table-striped table-bordered table-condensed'>"+
                                 "<tr><th>Name</th><td>" + feature.properties.name + "</td></tr>";
@@ -61,11 +64,15 @@ var grocers = L.geoJson(null, {
                 }
                 content += "<tr><th>Website</th><td><a class='url-break' href='" + website + "' target='_blank'>" + feature.properties.website + "</a></td></tr>";
             }
-            content += "<tr><th></th><td><a onclick='sidebar.toggle(); return false;'>More Info...</a></td></tr>";
+            content += "<tr><th></th><td><a onclick='testMe(" + ctr + ");sidebar.toggle(); return false;'>More Info...</a></td></tr>";
             content += "<table>";
+            layer._content = content;
+            layer._index = ctr;
+            ctr += 1;
             if (document.body.clientWidth <= 767) {
                 layer.on({
                     click: function(e) {
+                        console.log(layer);
                         $("#feature-title").html(feature.properties.name);
                         $("#feature-info").html(content);
                         $("#featureModal").modal("show");
@@ -89,7 +96,16 @@ var grocers = L.geoJson(null, {
     }
 });
 $.getJSON("data/vendors.geojson", function (data) {
-    grocers.addData(data);
+    d = grocers.addData(data);
+    console.log(grocers);
+    console.log(sidebar);
+    layers = d.getLayers();
+    console.log(layers[3]);
+    //console.log(layers[3].getSideBarContents());
+    //console.log(data);
+    //console.log(d);
+    //console.log(d.getLayers());
+    //console.log(document);
 });
 
 
