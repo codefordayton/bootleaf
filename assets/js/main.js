@@ -50,26 +50,42 @@ var grocers = L.geoJson(null, {
                 itemValue = feature.properties[key];
                 if (itemValue == 'Y') { itemValue = "Yes"; }
                 if (itemValue == 'N') { itemValue = "No"; }
-                sidebarContent += "<tr><th>" + key + "</th><td>" + itemValue + "</td></tr>";
-                if (feature.properties[key] != null && (key == 'address' || key == 'phone')) {
+                if (itemValue != null && (key == 'address' || key == 'phone' || key == 'website')) {
                       if (key == 'phone') {
-                        phone = +feature.properties[key].replace(/\D/g,'');
-                        content += "<tr><th>"+key+"</th><td><a href='tel:+" + phone + "'>" + feature.properties[key] +"</a></td></tr>";
+                        phone = +itemValue.replace(/\D/g,'');
+                        content += "<tr><th>"+key+"</th><td><a href='tel:+" + phone + "'>" + itemValue +"</a></td></tr>";
+                        sidebarContent += "<tr><th>"+key+"</th><td><a href='tel:+" + phone + "'>" + itemValue +"</a></td></tr>";
                       } else if (key == 'address') {
-                        content += "<tr><th>"+key+"</th><td><a target='_blank' href='http://maps.google.com/?q=" + feature.properties[key] + "'>" + feature.properties[key] +"</a></td></tr>";
-                      } else {
-                        content += "<tr><th>"+key+"</th><td>" + feature.properties[key] + "</td></tr>";
+                        content += "<tr><th>"+key+"</th><td><a target='_blank' href='http://maps.google.com/?q=" + itemValue + "'>" + itemValue +"</a></td></tr>";
+                        sidebarContent += "<tr><th>"+key+"</th><td><a target='_blank' href='http://maps.google.com/?q=" + itemValue + "'>" + itemValue +"</a></td></tr>";
+                    } else if (key == 'website') {
+                      var website = feature.properties.website;
+                      if (website.split('://').length == 1) {
+                          website = "http://" + website;
                       }
+                      content += "<tr><th>Website</th><td><a class='url-break' href='" + website + "' target='_blank'>" + feature.properties.website + "</a></td></tr>";
+                      sidebarContent += "<tr><th>Website</th><td><a class='url-break' href='" + website + "' target='_blank'>" + feature.properties.website + "</a></td></tr>";
+
+
+                      }
+                }
+                else {
+                  // Only items displayed in sidebar will be handled here...
+                  if (key == 'rta_bus_routes') {
+                    var routeValue = '';
+                    var routesArr = itemValue.split(',');
+                    var route = '0';
+                    for (var i=0;i < routesArr.length;i++) {
+                      route = routesArr[i].trim();
+                      if (routeValue != '') routeValue += ',';
+                      routeValue += '<a class="url-break" target="_blank" href="http://www.i-riderta.org/route_' + route + '.aspx">' + route + '</a>';
+                    }
+                    itemValue = routeValue;
+                  }
+                  sidebarContent += "<tr><th>" + key + "</th><td>" + itemValue + "</td></tr>";
                 }
             });
 
-            if (feature.properties.website){
-                var website = feature.properties.website;
-                if (website.split('://').length == 1) {
-                    website = "http://" + website;
-                }
-                content += "<tr><th>Website</th><td><a class='url-break' href='" + website + "' target='_blank'>" + feature.properties.website + "</a></td></tr>";
-            }
             content += "<tr><th></th><td><a onclick='updateSidebar(" + ctr + ");sidebar.toggle(); return false;'>More Info...</a></td></tr>";
             content += "<table>";
             layer._content = content;

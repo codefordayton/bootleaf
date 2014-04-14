@@ -99,6 +99,16 @@ if (typeof HTMLElement.prototype.visibility !== "function") {
 			}
 }
 
+/**
+	* trim() added to overcome fact that IE < 10.0 do not support a trim() function
+	*
+	* This adds trim() support for browsers that lack it.
+**/
+if(typeof String.prototype.trim !== 'function') {
+  String.prototype.trim = function() {
+    return this.replace(/^\s+|\s+$/g, '');
+  }
+}
 
 /**
 	* updateSidebar() - Updates the sidebar contents for the current layer.
