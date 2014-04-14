@@ -44,11 +44,13 @@ var grocers = L.geoJson(null, {
                                 "<tr><th>Name</th><td>" + feature.properties.name + "</td></tr>";
             var sidebarContent = "<H2>" + feature.properties.name + "</H2>" +
                                 "<table class='table table-striped table-bordered table-condensed'>";
-
+            var itemValue = "";
 
             Object.getOwnPropertyNames(feature.properties).forEach(function(key, idx, array) {
                 //if (!(feature.properties[key] == null || key === "website" || key === "name")) {
-                sidebarContent += "<tr><th>" + key + "</th><td>" + feature.properties[key] + "</td></tr>";  
+                itemValue = feature.properties[key];
+                if (itemValue == 'Y') { itemValue = "Yes"; }
+                sidebarContent += "<tr><th>" + key + "</th><td>" + itemValue + "</td></tr>";  
                 if (feature.properties[key] != null && (key == 'address' || key == 'phone')) {
                       if (key == 'phone') {
                         phone = +feature.properties[key].replace(/\D/g,'');
