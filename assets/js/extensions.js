@@ -115,6 +115,7 @@ if (typeof HTMLElement.prototype.visibility !== "function") {
 function updateSidebar(ctr) {
 	layers = grocers.getLayers();
 	layer = layers[ctr];
+	$("#featureModal").modal("hide");
 	properties = layer.feature.properties;
 	sidebar.setContent(layer._sidebarcontent);
 }

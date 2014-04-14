@@ -49,6 +49,7 @@ var grocers = L.geoJson(null, {
                 //if (!(feature.properties[key] == null || key === "website" || key === "name")) {
                 itemValue = feature.properties[key];
                 if (itemValue == 'Y') { itemValue = "Yes"; }
+                if (itemValue == 'N') { itemValue = "No"; }
                 sidebarContent += "<tr><th>" + key + "</th><td>" + itemValue + "</td></tr>";
                 if (feature.properties[key] != null && (key == 'address' || key == 'phone')) {
                       if (key == 'phone') {
