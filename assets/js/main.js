@@ -108,6 +108,11 @@ var grocers = L.geoJson(null, {
                 });
 
             } else {
+                layer.on({
+                  click: function() {
+                    updateSidebar(this._index);
+                  }
+                })
                 layer.bindPopup(content, {
                     maxWidth: "450",
                     closeButton: false
