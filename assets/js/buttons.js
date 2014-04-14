@@ -29,6 +29,7 @@ buttonGroup = function(config) {
 	this.buttons = [];
 	this.groupClassName = 'categories';
 	this.activeClassName = 'btn-primary';
+	this.defaultClassName = 'btn-default';
 	this.filterPropertyName = 'filterProperty';
 	this.filterValueName = 'filterValue';
 	this.init(config);
@@ -52,9 +53,11 @@ buttonGroup.prototype = {
 
 				if (btn.hasClass(this.activeClassName)) {
 					btn.removeClass(this.activeClassName);
+					btn.addClass(this.defaultClassName);
 				}
 				else {
-					btn.addClass(this.activeClassName)
+					btn.addClass(this.activeClassName);
+					btn.removeClass(this.defaultClassName);
 				}
 				this.updateMarkers();
 		},
