@@ -49,6 +49,7 @@ buttonGroup.prototype = {
 			this.filterValueName = this.filterValueName.toLowerCase();
 		},
 		toggle: function(btn) {
+
 				if (btn.hasClass(this.activeClassName)) {
 					btn.removeClass(this.activeClassName);
 				}
@@ -65,6 +66,7 @@ buttonGroup.prototype = {
 
 				var layers = this.geoJson.getLayers();
 				for (var i = 0; i < layers.length; i++) {
+					layers[i].closePopup();
 					showLayer = false; // by default we wont show marker unless it matches a button category.
 					for (var j=0;j < this.buttons.length;j++) {
 							if (this.buttons[j].hasClass(this.activeClassName)) {
