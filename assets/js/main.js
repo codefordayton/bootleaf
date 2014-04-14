@@ -38,7 +38,6 @@ var grocers = L.geoJson(null, {
         });
     },
     onEachFeature: function (feature, layer) {
-        // console.log(layer.getSideBarContents());
         if (feature.properties) {
             var content =   "<table class='table table-striped table-bordered table-condensed'>"+
                                 "<tr><th>Name</th><td>" + feature.properties.name + "</td></tr>";
@@ -50,7 +49,7 @@ var grocers = L.geoJson(null, {
                 //if (!(feature.properties[key] == null || key === "website" || key === "name")) {
                 itemValue = feature.properties[key];
                 if (itemValue == 'Y') { itemValue = "Yes"; }
-                sidebarContent += "<tr><th>" + key + "</th><td>" + itemValue + "</td></tr>";  
+                sidebarContent += "<tr><th>" + key + "</th><td>" + itemValue + "</td></tr>";
                 if (feature.properties[key] != null && (key == 'address' || key == 'phone')) {
                       if (key == 'phone') {
                         phone = +feature.properties[key].replace(/\D/g,'');

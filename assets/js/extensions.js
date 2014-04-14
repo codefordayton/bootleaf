@@ -100,13 +100,18 @@ if (typeof HTMLElement.prototype.visibility !== "function") {
 }
 
 
-L.Marker.prototype.getSideBarContents = function() {
-		console.log(this);
-		console.log(this._leaflet_id);
-		return "<div>Content goes here</div>";
-}
-
-
+/**
+	* updateSidebar() - Updates the sidebar contents for the current layer.
+	*
+	* This function is called from within the marker popup content, the "More Info..." a link.
+	* I would have liked to embed this function within each layer, IE as a prototype function etc
+	* however I could not because the More Info Link, when it is created, the layers don't yet exist
+	* the solution I came up with was to use a counter and to pass that into this function.
+	* The counter syncs up with the array position of the layers, which by the time a user clicks
+	* on the link are fully populated.  I then use the grocers object to get the layers and then the
+	* specific layer.  In the main.js I previously created a variable _sidebarcontent which has the
+	* content in html format for each layer, much like the popup content was created.
+**/
 function updateSidebar(ctr) {
 	layers = grocers.getLayers();
 	layer = layers[ctr];
