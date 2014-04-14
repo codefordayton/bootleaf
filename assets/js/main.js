@@ -44,20 +44,19 @@ var grocers = L.geoJson(null, {
             var sidebarContent = "<H2>" + feature.properties.name + "</H2>" +
                                 "<table class='table table-striped table-bordered table-condensed'>";
             var itemValue = "";
-
+            var itemKey = "";
             Object.getOwnPropertyNames(feature.properties).forEach(function(key, idx, array) {
                 //if (!(feature.properties[key] == null || key === "website" || key === "name")) {
                 itemValue = feature.properties[key];
-                if (itemValue == 'Y') { itemValue = "Yes"; }
-                if (itemValue == 'N') { itemValue = "No"; }
+                var itemKey = getFriendlyLabel(key);
                 if (itemValue != null && (key == 'address' || key == 'phone' || key == 'website')) {
                       if (key == 'phone') {
                         phone = +itemValue.replace(/\D/g,'');
-                        content += "<tr><th>"+key+"</th><td><a href='tel:+" + phone + "'>" + itemValue +"</a></td></tr>";
-                        sidebarContent += "<tr><th>"+key+"</th><td><a href='tel:+" + phone + "'>" + itemValue +"</a></td></tr>";
+                        content += "<tr><th>"+itemKey+"</th><td><a href='tel:+" + phone + "'>" + itemValue +"</a></td></tr>";
+                        sidebarContent += "<tr><th>"+itemKey+"</th><td><a href='tel:+" + phone + "'>" + itemValue +"</a></td></tr>";
                       } else if (key == 'address') {
-                        content += "<tr><th>"+key+"</th><td><a target='_blank' href='http://maps.google.com/?q=" + itemValue + "'>" + itemValue +"</a></td></tr>";
-                        sidebarContent += "<tr><th>"+key+"</th><td><a target='_blank' href='http://maps.google.com/?q=" + itemValue + "'>" + itemValue +"</a></td></tr>";
+                        content += "<tr><th>"+itemKey+"</th><td><a target='_blank' href='http://maps.google.com/?q=" + itemValue + "'>" + itemValue +"</a></td></tr>";
+                        sidebarContent += "<tr><th>"+itemKey+"</th><td><a target='_blank' href='http://maps.google.com/?q=" + itemValue + "'>" + itemValue +"</a></td></tr>";
                     } else if (key == 'website') {
                       var website = feature.properties.website;
                       if (website.split('://').length == 1) {
@@ -70,6 +69,10 @@ var grocers = L.geoJson(null, {
                       }
                 }
                 else {
+                  if (itemValue == null) { itemValue = ''; }
+                  if (itemValue == 'Y') { itemValue = "Yes"; }
+                  if (itemValue == 'N') { itemValue = "No"; }
+                  if (itemValue.toUpperCase() == 'Y*') {itemValue = 'Yes*'; }
                   // Only items displayed in sidebar will be handled here...
                   if (key == 'rta_bus_routes') {
                     var routeValue = '';
@@ -82,11 +85,14 @@ var grocers = L.geoJson(null, {
                     }
                     itemValue = routeValue;
                   }
-                  sidebarContent += "<tr><th>" + key + "</th><td>" + itemValue + "</td></tr>";
+                  if (key != 'name') {
+                    // Name is already displayed as <h2> tag at top, no need to display in table
+                    sidebarContent += "<tr><th>" + itemKey + "</th><td>" + itemValue + "</td></tr>";
+                    }
                 }
             });
 
-            content += "<tr><th></th><td><a onclick='updateSidebar(" + ctr + ");sidebar.toggle(); return false;'>More Info...</a></td></tr>";
+            content += "<tr><th></th><td><a onclick='updateSidebar(" + ctr + ");sidebar.show(); return false;'>More Info...</a></td></tr>";
             content += "<table>";
             layer._content = content;
             layer._sidebarcontent = sidebarContent;

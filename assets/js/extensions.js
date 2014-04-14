@@ -129,3 +129,32 @@ function updateSidebar(ctr) {
 	properties = layer.feature.properties;
 	sidebar.setContent(layer._sidebarcontent);
 }
+
+function getFriendlyLabel(label) {
+	var result = label;
+	var labels = {
+				'address' 						 : 'Address',
+				'bakery' 							: 'Bakery',
+				'convenience_foods' 	 : 'Convenience Foods',
+				'deli'								 : 'Deli',
+				'hours'								: 'Hours',
+				'international'				: 'International',
+				'local'								: 'Local',
+				'non_perishables'			: 'Non Perishables',
+				'notes'								: 'Notes',
+				'organic'							: 'Organic',
+				'phone'								: 'Phone',
+				'prepared_foods'			 : 'Prepared Foods',
+				'produce'							: 'Produce',
+				'rta_bus_routes'			 : 'RTA Bus Routes',
+				'seafood'							: 'Seafood',
+				'type'								 : 'Type',
+				'wic_stamps_snap'			: 'WIC/Food Stamps/SNAP',
+				'wine_beer'						: 'Wine and Beer'
+			};
+		if (labels[label] != null) {
+		result = labels[label]
+	};
+
+	return result;
+}
