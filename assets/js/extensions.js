@@ -126,6 +126,7 @@ function updateSidebar(ctr) {
 	layers = grocers.getLayers();
 	layer = layers[ctr];
 	$("#featureModal").modal("hide");
+	layer.closePopup();
 	properties = layer.feature.properties;
 	sidebar.setContent(layer._sidebarcontent);
 }
