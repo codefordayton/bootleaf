@@ -135,7 +135,7 @@ $.getJSON("data/vendors.geojson", function (data) {
 
 
 map = L.map("map", {
-    zoom: 10,
+    zoom: 13,
     center: [39.757588, -84.183497],
     layers: [mapquestOSM, grocers]
 });
