@@ -125,23 +125,24 @@
                                 <p>Absolutely no accuracy or completeness guarantee is implied or intended. All information on this map is subject to such variations and corrections as might result from a complete title search and/or accurate field survey.</p>
                             </div>
                             <div class="tab-pane fade" id="contact">
-                                <form id="contact-form">
-                                    <fieldset>
-                                        <div class="form-group">
-                                            <label for="name">Name:</label>
-                                            <input type="text" class="form-control" id="name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Email:</label>
-                                            <input type="text" class="form-control" id="email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="comment">Comment:</label>
-                                            <textarea class="form-control" rows="3" id="comment"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal">Submit</button>
-                                    </fieldset>
-                                </form>
+                                  <div class="btn-group">
+              <a href="#" class="btn btn-lg btn-success"
+                 data-uv-trigger
+                 data-uv-contact-title="Thank you for the feedback! How can we improve the site?">
+                   <span class="glyphicon glyphicon-thumbs-up icon-white"></span>
+              </a>
+              <a href="#" class="btn btn-lg btn-info"
+                 data-uv-trigger>
+                   <span class="glyphicon glyphicon-comment icon-white"></span>
+              </a>
+              <a href="#" class="btn btn-lg btn-danger"
+                 data-uv-trigger
+                 data-uv-contact-title="We're sorry. How can we improve?">
+                   <span class="glyphicon glyphicon-thumbs-down icon-white"></span>
+              </a>
+            </div>
+
+                        
                             </div>
                             <div class="tab-pane fade" id="boroughs-tab">
                                 <p>Borough data courtesy of <a href="http://www.nyc.gov/html/dcp/html/bytes/meta_dis_nyboroughwi.shtml" target="_blank">New York City Department of City Planning</a></p>
@@ -235,7 +236,18 @@
             });
           layers = new layerGroup({});
           </script>
+          <script>
+      UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/tuzEucnb54k6dfIcYqdePA.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
 
+      UserVoice.push(['set', {
+        accent_color: '#448dd6',
+        trigger_color: 'white',
+        trigger_background_color: 'rgba(46, 49, 51, 0.6)',
+        smartvote_enabled: false,
+        post_idea_enabled: false
+      }]);
+
+    </script>
             <script>
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
