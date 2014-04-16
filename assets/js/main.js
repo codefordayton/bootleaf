@@ -29,7 +29,7 @@ var grocers = L.geoJson(null, {
         return L.marker(latlng, {
             icon: L.icon({
                 iconUrl: "assets/img/grocer.png",
-                iconSize: [24, 28],
+                iconSize: [30, 40],
                 iconAnchor: [12, 28],
                 popupAnchor: [0, -25]
             }),
