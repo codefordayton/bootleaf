@@ -18,6 +18,11 @@ input[type="radio"], input[type="checkbox"] {
     margin: -10px 0 0 -110px;
     z-index: 20001;
 }
+
+#searchbox {
+  width: 150px;
+}
+
 .leaflet-control-layers label {
     font-weight: normal;
     margin-bottom: 0px;
