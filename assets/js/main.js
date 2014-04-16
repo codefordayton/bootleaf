@@ -83,7 +83,10 @@ var grocers = L.geoJson(null, {
                       if (routeValue != '') routeValue += ',';
                       routeValue += '<a class="url-break" target="_blank" href="http://www.i-riderta.org/route_' + route + '.aspx">' + route + '</a>';
                     }
-                    itemValue = routeValue;
+                    if (itemValue != 'NA') {
+                      itemValue = routeValue;
+                    }
+
                   }
                   if (key != 'name') {
                     // Name is already displayed as <h2> tag at top, no need to display in table
