@@ -27,9 +27,9 @@ var grocers = L.geoJson(null, {
         // when we have the icons for different types, we can set a variable for icon url here
         // then use as iconUrl value below...
         return L.marker(latlng, {
-            icon: L.icon({
-                iconUrl: "assets/img/grocer.png",
-                iconSize: [30, 40],
+            icon: L.divIcon({
+                html: "<img src='assets/img/grocery.svg'>",
+                iconSize: [30, 30],
                 iconAnchor: [12, 28],
                 popupAnchor: [0, -25]
             }),
