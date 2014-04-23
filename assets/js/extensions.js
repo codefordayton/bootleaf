@@ -79,11 +79,6 @@ HTMLElement.prototype.hasClass = function(classname) {
 	* might not produce the correct result.
 	*
 **/
-if (typeof HTMLElement.prototype.hide !== "function") {
-	HTMLElement.prototype.hide = function() {
-		this.style.visibility = 'hidden';
-	}
-}
 if (typeof HTMLElement.prototype.show !== "function") {
 	HTMLElement.prototype.show = function() {
 		this.style.visibility = 'visible';
