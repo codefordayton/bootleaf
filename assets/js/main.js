@@ -35,7 +35,6 @@ var grocers = L.geoJson(null, {
     pointToLayer: function (feature, latlng) {
         // when we have the icons for different types, we can set a variable for icon url here
         // then use as iconUrl value below...
-        console.log(feature);
         var iconHtml = "<img src='assets/img/grocery.svg'>";
         if (feature.properties.type == 'CSA') {
           iconHtml = "<img src='assets/img/csa.svg'>";
