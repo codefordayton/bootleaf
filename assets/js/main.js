@@ -26,9 +26,23 @@ var grocers = L.geoJson(null, {
     pointToLayer: function (feature, latlng) {
         // when we have the icons for different types, we can set a variable for icon url here
         // then use as iconUrl value below...
+        console.log(feature);
+        var iconHtml = "<img src='assets/img/grocery.svg'>";
+        if (feature.properties.type == 'CSA') {
+          iconHtml = "<img src='assets/img/csa.svg'>";
+        }
+        if (feature.properties.type == 'Convenience') {
+          iconHtml = "<img src='assets/img/convenience.svg'>";
+        }
+        if (feature.properties.type == 'Specialty') {
+          iconHtml = "<img src='assets/img/specialty.svg'>";
+        }
+        if (feature.properties.type == 'Farmers Market') {
+          iconHtml = "<img src='assets/img/farmersmarket.svg'>";
+        }
         return L.marker(latlng, {
             icon: L.divIcon({
-                html: "<img src='assets/img/grocery.svg'>",
+                html: iconHtml,
                 iconSize: [30, 30],
                 iconAnchor: [12, 28],
                 popupAnchor: [0, -25]
@@ -177,6 +191,7 @@ $("#searchbox").click(function () {
 
 // Typeahead search functionality
 $(document).one("ajaxStop", function () {
+
     //map.fitBounds(grocers.getBounds());
     $("#loading").hide();
 
