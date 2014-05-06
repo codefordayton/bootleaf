@@ -1,3 +1,12 @@
+/*
+    *@author  Code for Dayton
+    *Date: 2014
+    *The grocer web application provides information regarding fresh food(organic, locally grown, etc.)
+    *in Dayton, Ohio.  Four types of stores are displayed with four diffeerent map markers.  
+    *This allows users to map their way to various fresh food option.
+    *
+*/
+
 var map, grocerSearch = [];
 
 // Basemap Layers
