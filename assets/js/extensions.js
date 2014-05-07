@@ -79,12 +79,12 @@ HTMLElement.prototype.hasClass = function(classname) {
 	* might not produce the correct result.
 	*
 **/
-if (typeof HTMLElement.prototype.hide !== "function") {
+if (typeof HTMLElement.prototype.hideElem !== "function") {
 	HTMLElement.prototype.hide = function() {
 		this.style.visibility = 'hidden';
 	}
 }
-if (typeof HTMLElement.prototype.show !== "function") {
+if (typeof HTMLElement.prototype.showElem !== "function") {
 	HTMLElement.prototype.show = function() {
 		this.style.visibility = 'visible';
 	}
