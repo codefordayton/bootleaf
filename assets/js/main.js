@@ -2,7 +2,7 @@
     *@author  Code for Dayton
     *Date: 2014
     *The grocer web application provides information regarding fresh food(organic, locally grown, etc.)
-    *in Dayton, Ohio.  Four types of stores are displayed with four diffeerent map markers.  
+    *in Dayton, Ohio.  Four types of stores are displayed with four diffeerent map markers.
     *This allows users to map their way to various fresh food option.
     *
 */
@@ -10,24 +10,11 @@
 var map, grocerSearch = [];
 
 // Basemap Layers
-var mapquestOSM = L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    subdomains: ["otile1", "otile2", "otile3", "otile4"],
-    attribution: 'Tiles courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
-});
-var mapquestOAM = L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg", {
+
+var osm = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
     maxZoom: 18,
-    subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"],
-    attribution: 'Tiles courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a>. Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency'
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 });
-var mapquestHYB = L.layerGroup([L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg", {
-    maxZoom: 18,
-    subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"]
-}), L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/hyb/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"],
-    attribution: 'Labels courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency'
-})]);
 
 var ctr = 0;
 
@@ -162,7 +149,7 @@ $.getJSON("data/vendors.geojson", function (data) {
 map = L.map("map", {
     zoom: 12,
     center: [39.757588, -84.183497],
-    layers: [mapquestOSM, grocers]
+    layers: [osm, grocers]
 });
 
 
@@ -174,9 +161,7 @@ if (document.body.clientWidth <= 767) {
 };
 
 var baseLayers = {
-    "Streets": mapquestOSM,
-    "Imagery": mapquestOAM,
-    "Hybrid": mapquestHYB
+    "Streets": osm
 };
 
 var overlays = {
